@@ -36,7 +36,7 @@ else:
 
 def euler(angle):  # Euler's formula function.
     euler_value = e**(angle * 1j)
-    print("Your result:", round(euler_value.real, 4) + round(euler_value.imag, 4) * 1j)
+    return round(euler_value.real, 4) + round(euler_value.imag, 4) * 1j
 
 
-euler(angle_final)
+print("Your result:", euler(angle_final))
