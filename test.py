@@ -10,5 +10,4 @@ if "sammich" in list1:
 else:
     print("Tough luck, babe.")
 
-print(type(list1[0]))
-
+print(type(list1[1]))
