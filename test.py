@@ -12,4 +12,3 @@ else:
 
 print(type(list1[1]))
 
-print("this" == "")
