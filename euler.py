@@ -21,7 +21,9 @@ if "pi" in angle_in:
         else:
             sys.exit("Please provide a valid angle value.")
     else:
-        if angle_pi.replace(".", "").isnumeric():
+        if angle_pi == "":
+            angle_final = 1 * pi
+        elif angle_pi.replace(".", "").isnumeric():
             angle_final = float(angle_pi) * pi
         else:
             sys.exit("Please provide a valid angle value.")
