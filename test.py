@@ -11,3 +11,5 @@ else:
     print("Tough luck, babe.")
 
 print(type(list1[1]))
+
+print("this" == "")

@@ -14,7 +14,10 @@ if "pi" in angle_in:
     angle_pi = angle_in.replace("pi", "")
     if "/" in angle_pi:
         if angle_pi.replace(".", "").replace("/", "").isnumeric():
-            angle_final = float(angle_pi.split("/", 1)[0]) * pi / float(angle_pi.split("/", 1)[1])
+            if angle_pi.split("/", 1)[0] == "":
+                angle_final = 1 * pi / float(angle_pi.split("/", 1)[1])
+            else:
+                angle_final = float(angle_pi.split("/", 1)[0]) * pi / float(angle_pi.split("/", 1)[1])
         else:
             sys.exit("Please provide a valid angle value.")
     else:
@@ -29,7 +32,7 @@ elif "/" in angle_in:
     else:
         sys.exit("Please provide a valid angle value.")
 elif angle_in.replace(".", "").isnumeric():
-    angle_final = angle_in
+    angle_final = float(angle_in)
 else:
     sys.exit("Please provide a valid angle value.")
 
