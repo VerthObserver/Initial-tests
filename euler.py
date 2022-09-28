@@ -7,7 +7,7 @@ e = math.e
 print("Euler\'s Formula Calculator\nby Laevateinn\n")
 
 # Input without spaces.
-angle_in = input("Input angle in radians (For \u03C0 use \"pi\". For fractions, \"/\"): ").replace(" ", "")
+angle_in = input("Input angle in radians (Use \"pi\" for \u03C0 and \"/\" for fractions): ").replace(" ", "")
 
 # Checks if input is numeric. For input with "pi", multiplies by pi. For input with "/", divides.
 if "pi" in angle_in:

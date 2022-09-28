@@ -3,11 +3,9 @@ fraction_in = input("Enter a fraction: ")
 
 def frac_to_float(fraction):
     if "/" in fraction:
-        float_out = float(fraction.split("/", 1)[0]) / float(fraction.split("/", 1)[1])
-        print(float_out)
+        return float(fraction.split("/", 1)[0]) / float(fraction.split("/", 1)[1])
     else:
-        float_out = float(fraction)
-        print(float_out)
+        return float(fraction)
 
 
-frac_to_float(fraction_in)
+print(frac_to_float(fraction_in))
