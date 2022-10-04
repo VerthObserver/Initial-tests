@@ -10,29 +10,22 @@ print("Euler\'s Formula Calculator\nby Laevateinn\n")
 angle_in = input("Input angle in radians (Use \"pi\" for \u03C0 and \"/\" for fractions): ").replace(" ", "")
 
 # Checks if input is numeric. For input with "pi", multiplies by pi. For input with "/", divides.
-if "pi" in angle_in:
+if "pi" in angle_in and angle_in.replace("pi", "").replace(".", "").replace("/", "").isnumeric():
     angle_pi = angle_in.replace("pi", "")
     if "/" in angle_pi:
-        if angle_pi.replace(".", "").replace("/", "").isnumeric():
-            if angle_pi.split("/", 1)[0] == "":
-                angle_final = 1 * pi / float(angle_pi.split("/", 1)[1])
-            else:
-                angle_final = float(angle_pi.split("/", 1)[0]) * pi / float(angle_pi.split("/", 1)[1])
+        if angle_pi.split("/", 1)[0] == "":
+            angle_final = 1 * pi / float(angle_pi.split("/", 1)[1])
         else:
-            sys.exit("Please provide a valid angle value.")
+            angle_final = float(angle_pi.split("/", 1)[0]) * pi / float(angle_pi.split("/", 1)[1])
     else:
-        if angle_pi == "":
-            angle_final = 1 * pi
-        elif angle_pi.replace(".", "").isnumeric():
-            angle_final = float(angle_pi) * pi
-        else:
-            sys.exit("Please provide a valid angle value.")
-
-elif "/" in angle_in:
-    if angle_in.replace(".", "").replace("/", "").isnumeric():
+        angle_final = float(angle_pi) * pi
+elif "pi" in angle_in and angle_in.replace("pi", "").replace(".", "") == "":
+    angle_final = pi
+elif "/" in angle_in and angle_in.replace(".", "").replace("/", "").isnumeric():
+    if not(angle_in.split("/", 1)[0] == ""):
         angle_final = float(angle_in.split("/", 1)[0]) / float(angle_in.split("/", 1)[1])
     else:
-        sys.exit("Please provide a valid angle value.")
+        sys.exit("Please provide a valid fraction.")
 elif angle_in.replace(".", "").isnumeric():
     angle_final = float(angle_in)
 else:
